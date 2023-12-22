@@ -52,7 +52,10 @@ int	ft_printf(const char *arg, ...)
 	{
 		if (arg[i] == '%')
 		{
+		
 			i++;
+			if(arg[i] == '\0')
+				break;
 			if (ft_strchr("csdpiuxX%", arg[i]))
 				count += ft_type_data(arg[i], ap);
 			else
